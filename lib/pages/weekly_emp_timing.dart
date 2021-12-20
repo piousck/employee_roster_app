@@ -2,19 +2,16 @@ import 'package:employee_roster_app/custom_components/my_card_component.dart';
 import 'package:employee_roster_app/custom_components/sideline.dart';
 import 'package:employee_roster_app/custom_components/sideview_calender.dart';
 import 'package:flutter/material.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 
-class WeeklyTimings
-    extends StatefulWidget {
-  WeeklyTimings({Key? key})
-      : super(key: key);
+class WeeklyTimings extends StatefulWidget {
+  WeeklyTimings({Key? key}) : super(key: key);
 
   @override
-  _WeeklyTimingsState createState() =>
-      _WeeklyTimingsState();
+  _WeeklyTimingsState createState() => _WeeklyTimingsState();
 }
 
-class _WeeklyTimingsState
-    extends State<WeeklyTimings> {
+class _WeeklyTimingsState extends State<WeeklyTimings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +21,7 @@ class _WeeklyTimingsState
           snap: true,
           floating: true,
           expandedHeight: 140,
-          backgroundColor:
-              Colors.orange,
+          backgroundColor: Colors.orange,
           collapsedHeight: 100,
           title: Text(
             "Wk 24",
@@ -33,22 +29,32 @@ class _WeeklyTimingsState
               color: Color(0xff1d1c2c),
               fontSize: 44,
               fontFamily: "Poppins",
-              fontWeight:
-                  FontWeight.w500,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
         SliverList(
-          delegate:
-              SliverChildBuilderDelegate(
-            (BuildContext context,
-                int index) {
-              return Row(
-                children: const [
-                  SideviewCalender(),
-                  Sideline(),
-                  MyCustomCard()
-                ],
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: TimelineTile(
+                  indicatorStyle: const IndicatorStyle(
+                    width: 10,
+                    color: Colors.green,
+                  ),
+                  beforeLineStyle:
+                      const LineStyle(thickness: 2, color: Colors.black12),
+                  afterLineStyle:
+                      const LineStyle(thickness: 2, color: Colors.black12),
+                  alignment: TimelineAlign.manual,
+                  lineXY: 0.17,
+                  endChild: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: MyCustomCard(),
+                  ),
+                  startChild: const SideviewCalender(),
+                ),
               );
             },
             childCount: 7,

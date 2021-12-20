@@ -7,10 +7,10 @@ class MyCustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: SizedBox(
         width: 290,
-        height: 105,
+        height: 95,
         child: Stack(
           children: [
             Positioned.fill(
@@ -33,7 +33,7 @@ class MyCustomCard extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Container(
-                  child: DayTiming(),
+                  child: const DayTiming(),
                   width: 280,
                   height: 88,
                   decoration: BoxDecoration(
