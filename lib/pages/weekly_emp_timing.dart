@@ -36,11 +36,10 @@ class _WeeklyTimingsState extends State<WeeklyTimings> {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(0.0),
+              return Container(
                 child: TimelineTile(
                   indicatorStyle: const IndicatorStyle(
-                    width: 10,
+                    width: 8,
                     color: Colors.green,
                   ),
                   beforeLineStyle:
@@ -48,13 +47,14 @@ class _WeeklyTimingsState extends State<WeeklyTimings> {
                   afterLineStyle:
                       const LineStyle(thickness: 2, color: Colors.black12),
                   alignment: TimelineAlign.manual,
-                  lineXY: 0.17,
+                  lineXY: 0.15,
                   endChild: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.only(right: 10),
                     child: MyCustomCard(),
                   ),
                   startChild: const SideviewCalender(),
                 ),
+                height: 110,
               );
             },
             childCount: 7,
