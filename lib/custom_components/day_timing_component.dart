@@ -5,6 +5,10 @@ class DayTiming extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    var StartTime = "09:09";
+    // ignore: non_constant_identifier_names
+    var EndTime = "12:00";
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -28,11 +32,11 @@ class DayTiming extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
                     child: Text(
-                      "10:00",
-                      style: TextStyle(
+                      StartTime,
+                      style: const TextStyle(
                         color: Color(0xff1d1c2c),
                         fontSize: 18,
                         fontFamily: "Poppins",
@@ -82,11 +86,11 @@ class DayTiming extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
                     child: Text(
-                      "10:00",
-                      style: TextStyle(
+                      EndTime,
+                      style: const TextStyle(
                         color: Color(0xff1d1c2c),
                         fontSize: 18,
                         fontFamily: "Poppins",

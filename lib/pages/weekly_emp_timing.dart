@@ -54,7 +54,7 @@ class _WeeklyTimingsState extends State<WeeklyTimings> {
                   ),
                   startChild: const SideviewCalender(),
                 ),
-                height: 110,
+                height: 118,
               );
             },
             childCount: 7,
